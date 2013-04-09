@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 
 /**
@@ -107,6 +108,12 @@ public class CreateAlumni extends Activity {
 				
 				// TODO Activy almni detail 
 				// Tip: Information across Activities goes into an Intent serializing the object in this case
+			
+				Intent intent= new Intent(CreateAlumni.this,AlumniDetail.class);
+				Bundle b= new Bundle();
+			    b.putSerializable("alumno", alm);
+			    intent.putExtras(b);
+			    startActivity(intent);
 			}
 		});
 	}

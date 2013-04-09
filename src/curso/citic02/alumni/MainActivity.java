@@ -2,6 +2,7 @@ package curso.citic02.alumni;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -15,11 +16,14 @@ import android.widget.Toast;
  * @author pablo
  */
 public class MainActivity extends Activity {
+	
+	private static Context context;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		context= this;
 		//Sets layout for the activity
 		setContentView(R.layout.activity_main);
 		
@@ -27,7 +31,7 @@ public class MainActivity extends Activity {
 		Button btn = (Button)findViewById(R.id.btnHello);
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, getResources().getString(R.string.welcome), Toast.LENGTH_LONG).show();				
+				Toast.makeText(context, getResources().getString(R.string.welcome), Toast.LENGTH_LONG).show();				
 			}
 		});
 		
