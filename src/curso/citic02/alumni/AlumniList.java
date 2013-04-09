@@ -37,14 +37,19 @@ public class AlumniList extends ListActivity {
 			alumnis[i] = "Alumno " + i;
 		
 		// TODO 2 - crear el ArrayAdapter. Recordar que lo hemos usado antes
-		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.alumni_list_item, R.id.txtName, alumnis);
 		// TIP1: El layout de la celda se llama alumni_list_item
 		// TIP2: El tercer par‡metro es el id del TextView donde vamos a poner el nombre
 		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(CONTEXTO, LAYOUT_ITEM, ID_CAMPO_TEXTO, ARRAY)
 				
 		// TODO 3 - asociar al adapter, fijaos de que extienda esta Activity
+		getListView().setAdapter(adapter);
+		
 		
 		getListView().setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, android.view.View v, int position, long id) {
+				Toast.makeText(AlumniList.this, (String)parent.getItemAtPosition(position), Toast.LENGTH_LONG).show();				
+			}
 			// TODO 4 - completar el Listener con el evento adecuado poniendo en un Toast la posici—n seleccionada
 		});
 	}

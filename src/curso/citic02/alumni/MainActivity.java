@@ -43,6 +43,14 @@ public class MainActivity extends Activity {
 			}
 		});		
 		
+		Button btnList = (Button)findViewById(R.id.btnOpenList);
+		btnList.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, AlumniList.class);
+				startActivity(i);
+			}
+		});
 	}
 
 	@Override
