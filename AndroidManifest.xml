@@ -31,8 +31,21 @@
                 android:value="curso.citic02.alumni.MainActivity" />
         </activity>
         <activity
+<<<<<<< HEAD
             android:name="curso.citic02.alumni.AlumniDetail"
             android:label="@string/title_activity_alumni_detail" >
+=======
+            android:name="curso.citic02.alumni.AlimniDetail"
+            android:label="@string/title_activity_alimni_detail" >
+        </activity>
+        <activity
+            android:name="curso.citic02.alumni.AlumniList"
+            android:label="@string/title_activity_alumni_list"
+            android:parentActivityName="@string/title_activity_main" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.app.ListActivity" />
+>>>>>>> 56749f0eb2e4603db570b8ec513f11c6f27cd147
         </activity>
     </application>
 
